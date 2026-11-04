@@ -1,0 +1,10 @@
+dataset_name: UCI Adult (version 2)
+metrics:
+  baseline_accuracy: 0.8539548215382515
+  baseline_f1: 0.6601016518424396
+  derived_accuracy: 0.8577765645260357
+  derived_f1: 0.6696258719086874
+processed_sha256: 615cf431622d3a88c23a9c007290b27f35a640830df98a47100906049d48504e
+random_seed: 42
+raw_cols: 15
+raw_rows: 48842

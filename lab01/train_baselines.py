@@ -1,4 +1,6 @@
-import of os
+import os
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 from sklearn.datasets import load_breast_cancer
@@ -28,10 +30,14 @@ rf_model.fit(X_train, y_train)
 rf_acc = rf_model.score(X_test, y_test)
 
 # 5. Save test accuracies to results/baseline_accuracy.csv rounded to 4 decimal
-os.makedirs("lab01/results", exist_ok=True)
+base_dir = Path(__file__).resolve().parent
+results_dir = base_dir / "results"
+results_dir.mkdir(exist_ok=True, parents=True)
+
 results_df = pd.DataFrame({
     "Model": ["LogisticRegression", "RandomForestClassifier"],
     "Test_Accuracy": [round(lr_acc, 4), round(rf_acc, 4)]
 })
-results_df.to_csv("lab01/results/baseline_accuracy.csv", index=False)
+results_df.to_csv(results_dir / "baseline_accuracy.csv", index=False)
+
 print("Baseline accuracies saved successfully!")

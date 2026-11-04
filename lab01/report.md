@@ -1,0 +1,3 @@
+Two baseline classifiers were evaluated using test accuracy. Logistic Regression achieved 94.74%, while the Random Forest Classifier achieved 93.57%.
+
+Logistic Regression performed better by 1.17 percentage points. Both models showed strong accuracy on this evaluation, with Logistic Regression providing the higher baseline result. The results alone do not indicate whether this difference is statistically significant.
