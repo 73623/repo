@@ -1,4 +1,15 @@
-1. Goal
-2. Method
-3. Resuits
-4. Conclusion
+﻿Lab 5: Frameworks and Automatic Differentiation
+
+The goal of this lab was to understand how deep learning frameworks work internally by building a small automatic differentiation system from scratch and comparing it with PyTorch. The main focus was on reverse-mode differentiation, gradient verification, model training performance, and the effect of execution strategy and memory layout on runtime.
+
+The first part of the lab involved creating a custom scalar computation graph. Each value stored a floating-point number, a gradient, and references to the parent values used to compute it. This allowed the model to perform backpropagation by walking the graph in reverse from the final output. The aim was to recreate the design of autograd in a simplified way so the core ideas of deep learning frameworks could be understood more clearly.
+
+After building the custom graph, the next step was to verify the gradients. A function involving multiplication, addition, squared values, and ReLU was tested. The custom gradients were compared with PyTorch’s built-in automatic differentiation and with numerical gradients computed using small finite differences. The results matched extremely closely, which showed that the hand-written autograd system was mathematically correct.
+
+The training comparison then evaluated a small neural network on the make_moons dataset. Both the custom implementation and PyTorch used the same model structure: an input layer, a hidden layer with ReLU activation, and an output layer with a sigmoid activation and binary cross-entropy loss. The custom version trained correctly, but it was much slower than PyTorch because it processed each scalar individually in Python, creating a large overhead. PyTorch used vectorized tensor operations and optimized C++ kernels, so it trained much faster while reaching similar accuracy.
+
+The final part of the lab looked at how PyTorch handles execution and how memory layout affects performance. The model’s traced computation graph was inspected, and eager execution was compared with traced or compiled execution. The traced or compiled version reduced overhead because it avoided repeated Python dispatch, which is useful for models with many small operations. This showed that graph-level optimization can improve runtime even when the underlying math is the same.
+
+The lab also examined the importance of tensor contiguity. A contiguous tensor was much faster to process than a transposed view with a non-standard memory layout. Although a transpose is a cheap metadata operation, later operations that require a contiguous array can become much slower because the runtime has to create a new memory layout and handle less cache-friendly access patterns. This demonstrated that memory organization can significantly affect performance in deep learning systems.
+
+Overall, the lab showed that a custom autograd implementation is a useful educational exercise because it explains the fundamental ideas behind automatic differentiation. However, real frameworks like PyTorch are far more efficient because they use vectorized tensor operations, optimized low-level kernels, and careful memory management. The results also highlighted that runtime performance depends not only on the model architecture, but also on how the computation graph is executed and how tensors are laid out in memory.

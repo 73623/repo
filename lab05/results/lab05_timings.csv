@@ -1,0 +1,8 @@
+Experiment,Metric,Value
+Gradient Max Abs Diff,Max Error,1.12e-09
+Moons Training (Scalar Autograd),Median Time (ms),353.36
+Moons Training (PyTorch),Median Time (ms),4.65
+Inference (Eager),Median Time (ms),0.0930
+Inference (torch.compile),Median Time (ms),0.1105
+Contiguous Tensor Op,Median Time (ms),0.0254
+Non-Contiguous View Op,Median Time (ms),1.1506
