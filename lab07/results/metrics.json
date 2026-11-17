@@ -1,0 +1,31 @@
+{
+    "baseline": {
+        "params": 1077898,
+        "acc": 91.45,
+        "size_mb": 4.115999221801758,
+        "latency_ms": 0.7998099998803809
+    },
+    "unstructured_90": {
+        "acc": 92.21,
+        "dense_mb": 4.115999221801758,
+        "sparse_mb": 2.4665679931640625,
+        "latency_ms": 0.8045629999833182
+    },
+    "structured_50": {
+        "acc": 91.3,
+        "size_mb": 4.115907669067383,
+        "latency_ms": 0.7681840000441298
+    },
+    "plain_student": {
+        "params": 105866,
+        "acc": 90.99,
+        "size_mb": 0.40643310546875,
+        "latency_ms": 0.3346780000720173
+    },
+    "distilled_student": {
+        "params": 105866,
+        "acc": 90.0,
+        "size_mb": 0.40643310546875,
+        "latency_ms": 0.3346780000720173
+    }
+}
