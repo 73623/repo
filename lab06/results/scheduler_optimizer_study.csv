@@ -1,0 +1,5 @@
+Config,Optimizer,Scheduler,Test_Accuracy_pct
+Adam_StepLR,Adam,StepLR,90.27
+Adam_CosineAnnealingLR,Adam,Cosine,90.37
+Adam_ReduceLROnPlateau,Adam,Plateau,90.61
+SGD_Momentum_Cosine,SGD,Cosine,90.38

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/alber/Desktop/repo/results/mlruns/538208067850690793/4ad0b82eb90240b9aaa10e66b581197d/artifacts
+end_time: 1794743387577
+entry_point_name: ''
+experiment_id: '538208067850690793'
+lifecycle_stage: active
+run_id: 4ad0b82eb90240b9aaa10e66b581197d
+run_name: YAML_Baseline_CNN
+run_uuid: 4ad0b82eb90240b9aaa10e66b581197d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1794743320017
+status: 3
+tags: []
+user_id: alber

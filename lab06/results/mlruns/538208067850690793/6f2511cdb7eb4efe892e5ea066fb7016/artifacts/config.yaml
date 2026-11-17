@@ -1,0 +1,27 @@
+seed: 42
+dataset:
+  name: FashionMNIST
+  root: ./date
+  mean: 0.2860
+  std: 0.3530
+  train_size: 55000
+  val_size: 5000
+
+model:
+  name: CNN
+  num_classes: 10
+
+training:
+  epochs: 5
+  batch_size: 128
+  lr: 0.001
+  optimizer: Adam
+  num_workers: 2
+  checkpoint_path: results/checkpoint.pt
+
+studies:
+  workers_list: [0, 1, 2, 4, 8]
+  batch_sizes: [32, 64, 128, 256, 512]
+  scheduler_epochs: 10
+  accum_micro_batch: 64
+  accum_steps: 4
